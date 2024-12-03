@@ -2,15 +2,15 @@ import SectionCard from "./subcomponents/Sections-Card";
 
 export default function Sections() {
   return (
-    <div className="w-full h-max flex justify-center items-center gap-10 mt-10 px-16">
-      <div className="w-3/12 bg-violet-300 border-2  border-black py-8 px-16 rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
+    <div className="w-full h-[400px] flex justify-center items-center gap-10 mt-10 px-16">
+      <div className="w-3/12 h-full bg-violet-300 border-2  border-black rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
         <SectionCard
           image={"/images/ui/sections/adozioni.jpg"}
           title={"Adozioni"}
           description={"Un nuovo amico ti aspetta, Vieni a trovarlo!"}
         />
       </div>
-      <div className="w-3/12 bg-violet-300 border-2  border-black py-8 px-16 rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
+      <div className="w-3/12 h-full bg-violet-300 border-2  border-black rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
         <SectionCard
           image={"/images/ui/sections/adozioni.jpg"}
           title={"Comunicazioni"}
@@ -19,7 +19,7 @@ export default function Sections() {
           }
         />
       </div>
-      <div className="w-3/12 bg-violet-300 border-2  border-black py-8 px-16 rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
+      <div className="w-3/12 h-full bg-violet-300 border-2  border-black rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
         <SectionCard
           image={"/images/ui/sections/adozioni.jpg"}
           title={"Smarriti"}

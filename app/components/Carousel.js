@@ -22,7 +22,7 @@ export default function Carousel() {
     <Swiper
       // install Swiper modules
       modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
-      className="mySwiper h-[600px]"
+      className="mySwiper h-[400px]"
       slidesPerView={1}
       effect={"fade"}
       centeredSlides={true}
