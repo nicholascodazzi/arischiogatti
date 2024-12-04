@@ -9,13 +9,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --background: url("/images/ui/background-pattern.png"); */
+    --background: url("/images/ui/background-pattern.png");
     --foreground: rgb(221, 214, 254);
   }
 }
 
 body {
   color: var(--foreground);
-  /* background: var(--background); */
+  background: var(--background);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: var(--foreground);
 }

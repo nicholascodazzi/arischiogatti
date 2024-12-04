@@ -1,6 +1,5 @@
 "use client";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
@@ -22,7 +21,7 @@ export default function Carousel() {
     <Swiper
       // install Swiper modules
       modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
-      className="mySwiper h-[400px]"
+      className="mySwiper lg:h-[600px] md:h-[500px]"
       slidesPerView={1}
       effect={"fade"}
       centeredSlides={true}
@@ -55,15 +54,6 @@ export default function Carousel() {
       </SwiperSlide>
       <SwiperSlide>
         <Image
-          src="/images/ui/carousel/cat-3.jpg"
-          className="w-full h-full"
-          width={10000}
-          height={10000}
-          alt="gatto 3"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image
           src="/images/ui/carousel/cat-4.jpg"
           className="w-full h-full"
           width={10000}
@@ -78,15 +68,6 @@ export default function Carousel() {
           width={10000}
           height={10000}
           alt="gatto 5"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image
-          src="/images/ui/carousel/cat-6.jpg"
-          className="w-full h-full"
-          width={10000}
-          height={10000}
-          alt="gatto 6"
         />
       </SwiperSlide>
     </Swiper>

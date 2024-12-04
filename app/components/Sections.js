@@ -2,30 +2,41 @@ import SectionCard from "./subcomponents/Sections-Card";
 
 export default function Sections() {
   return (
-    <div className="w-full h-[400px] flex justify-center items-center gap-10 mt-10 px-16">
-      <div className="w-3/12 h-full bg-violet-300 border-2  border-black rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
-        <SectionCard
-          image={"/images/ui/sections/adozioni.jpg"}
-          title={"Adozioni"}
-          description={"Un nuovo amico ti aspetta, Vieni a trovarlo!"}
-        />
+    <>
+      <div className="lg:flex lg:justify-center lg:my-8">
+        <p className="font-bold text-violet-800 text-4xl">
+          Dai un&apos;occhiata!
+        </p>
       </div>
-      <div className="w-3/12 h-full bg-violet-300 border-2  border-black rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
-        <SectionCard
-          image={"/images/ui/sections/adozioni.jpg"}
-          title={"Comunicazioni"}
-          description={
-            "Resta aggiornato/a su tutte le nostre iniziative ed eventi"
-          }
-        />
+      <div className="lg:flex lg:justify-center lg:items-center lg:gap-16">
+        <div className="lg:w-1/6">
+          <a href="#">
+            <SectionCard
+              image={"/images/ui/sections/adozioni.svg"}
+              title={"Adozioni"}
+              description={"Un nuovo amico ti aspetta, vieni a trovarlo!"}
+            />
+          </a>
+        </div>
+        <div className="lg:w-1/6">
+          <a href="#">
+            <SectionCard
+              image={"/images/ui/sections/comunicazioni.svg"}
+              title={"Comunicazioni"}
+              description={"Resta sempre aggiornato su iniziative ed eventi!"}
+            />
+          </a>
+        </div>
+        <div className="lg:w-1/6">
+          <a href="#">
+            <SectionCard
+              image={"/images/ui/sections/smarriti.svg"}
+              title={"Smarriti"}
+              description={"Ritroviamo i nostri amici insieme!"}
+            />
+          </a>
+        </div>
       </div>
-      <div className="w-3/12 h-full bg-violet-300 border-2  border-black rounded-3xl hover:cursor-pointer hover:scale-105 hover:transition-all">
-        <SectionCard
-          image={"/images/ui/sections/adozioni.jpg"}
-          title={"Smarriti"}
-          description={"Aiutaci a ritrovare i nostri amici smarriti"}
-        />
-      </div>
-    </div>
+    </>
   );
 }

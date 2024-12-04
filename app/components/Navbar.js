@@ -4,7 +4,7 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 export default function Navbar() {
   return (
     <nav>
-      <div className="lg:w-full lg:h-32 lg:flex lg:items-center lg:justify-between lg:px-4 lg:w-full lg:h-32 shadow-[0_1px_5px_1px_rgba(0,0,0,0.3)]">
+      <div className="lg:w-full lg:h-32 lg:flex lg:items-center lg:justify-between lg:px-4 shadow-[0_1px_5px_1px_rgba(0,0,0,0.3)]">
         <div className="lg:flex lg:justify-center lg:items-center text-xl gap-3 text-black font-bold">
           <div className="lg:w-24 lg:h-auto">
             <Image
