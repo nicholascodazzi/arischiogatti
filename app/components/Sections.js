@@ -4,7 +4,7 @@ export default function Sections() {
   return (
     <>
       <div className="lg:flex lg:justify-center lg:my-8">
-        <p className="font-bold text-violet-800 text-4xl">
+        <p className="font-bold text-violet-700 text-4xl">
           Dai un&apos;occhiata!
         </p>
       </div>

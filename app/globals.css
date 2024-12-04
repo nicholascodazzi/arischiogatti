@@ -10,7 +10,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: url("/images/ui/background-pattern.png");
-    --foreground: rgb(221, 214, 254);
+    --foreground: rgb(255, 255, 255);
   }
 }
 
