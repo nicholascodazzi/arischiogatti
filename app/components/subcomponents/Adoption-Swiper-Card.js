@@ -9,15 +9,15 @@ export default function AdoptionSliderCard({
   url
 }) {
   return (
-    <div className="border border-black rounded-2xl shadow shadow-lg bg-violet-400 overflow-hidden">
-      <div className="lg:flex lg:justify-center lg:items-center max-h-[250px] overflow-hidden">
+    <div className="border border-black rounded-2xl shadow-lg bg-violet-400 overflow-hidden">
+      <div className="relative lg:flex lg:justify-center lg:items-center min-h-[250px] max-h-[250px]">
         <a href="#">
           <Image
             src={image}
-            width={1000}
-            height={1000}
             alt={image_description}
-          />
+            fill={true}
+            className="object-cover"
+            />
         </a>
       </div>
 

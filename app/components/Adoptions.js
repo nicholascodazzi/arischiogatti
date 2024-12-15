@@ -16,8 +16,8 @@ import AdoptionSliderCard from "./subcomponents/Adoption-Swiper-Card";
 export default function Adoptions() {
   return (
     <>
-      <div className="lg:w-full lg:flex lg:justify-center lg:my-8">
-        <p className="font-bold text-violet-700 text-4xl lg:drop-shadow-xl">
+      <div className="w-full flex justify-center my-8 ">
+        <p className="font-bold text-violet-700 lg:text-4xl text-3xl drop-shadow-xl">
           Appelli
         </p>
       </div>
@@ -28,17 +28,24 @@ export default function Adoptions() {
             // install Swiper modules
             modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
             className="lg:h-[500px] lg:w-10/12"
-            slidesPerView={3}
-            spaceBetween={125}
             // effect={"fade"}
             centeredSlides={true}
             // fadeEffect={{ crossFade: true }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false
-            }}
+            // autoplay={{
+            //   delay: 2500,
+            //   disableOnInteraction: false
+            // }}
             grabCursor={true}
             loop={true}
+            breakpoints={{
+              0:{
+                slidesPerView: 1,
+              },
+              768:{
+                slidesPerView: 3,
+                spaceBetween: 125
+              }}
+            }
           >
             <SwiperSlide>
               <AdoptionSliderCard

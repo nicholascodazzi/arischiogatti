@@ -21,7 +21,7 @@ export default function Carousel() {
     <Swiper
       // install Swiper modules
       modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
-      className="mySwiper lg:h-[600px] md:h-[500px]"
+      className="mySwiper lg:h-[30rem] h-96"
       slidesPerView={1}
       effect={"fade"}
       centeredSlides={true}
@@ -37,7 +37,7 @@ export default function Carousel() {
       <SwiperSlide>
         <Image
           src="/images/ui/carousel/cat-1.jpg"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           width={10000}
           height={10000}
           alt="gatto 1"
@@ -46,7 +46,7 @@ export default function Carousel() {
       <SwiperSlide>
         <Image
           src="/images/ui/carousel/cat-2.jpg"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           width={10000}
           height={10000}
           alt="gatto 2"
@@ -55,7 +55,7 @@ export default function Carousel() {
       <SwiperSlide>
         <Image
           src="/images/ui/carousel/cat-4.jpg"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           width={10000}
           height={10000}
           alt="gatto 4"
@@ -64,7 +64,7 @@ export default function Carousel() {
       <SwiperSlide>
         <Image
           src="/images/ui/carousel/cat-5.jpg"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           width={10000}
           height={10000}
           alt="gatto 5"

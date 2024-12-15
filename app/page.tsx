@@ -10,10 +10,10 @@ export default function Home() {
       <meta name="author" content="Codazzi Nicholas" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <Navbar />
-      {/* <Carousel />
+      <Carousel />
       <Sections />
       <Adoptions />
-      <Footer /> */}
+      {/* <Footer /> */}
     </>
   );
 }
