@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import NavTag from "./subcomponents/NavTag";
+import NavTag from "../components/subcomponents/NavTag";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,6 +9,7 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -86,7 +87,7 @@ export default function Navbar() {
                 <FontAwesomeIcon
                   icon={faPhone}
                   width={30}
-                  className="text-white"
+                  className="text-2xl text-white"
                 />
                 <div>+ 39 338 385 8920</div>
               </div>
@@ -94,7 +95,7 @@ export default function Navbar() {
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   width={30}
-                  className="text-white"
+                  className="text-2xl text-white"
                 />
                 <div>associazione.arischiogatti@gmail.com</div>
               </div>

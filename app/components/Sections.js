@@ -1,14 +1,16 @@
 import SectionCard from "./subcomponents/Sections-Card";
+import TitleSubtitle from "./subcomponents/Title-Subtitle";
 
 export default function Sections() {
   return (
     <>
-      <div className="flex justify-center my-12 lg:my-8">
-        <p className="font-bold text-violet-700 lg:text-4xl text-3xl">
-          Dai un&apos;occhiata!
-        </p>
-      </div>
-      <div className="lg:flex lg:flex-row lg:justify-center lg:items-center lg:gap-16 flex flex-col items-center">
+      <TitleSubtitle
+        title={"Esplora"}
+        subtitle={
+          " Scopri tutto ciò che riguarda Arischiogatti e resta sempre aggiornato."
+        }
+      />
+      <div className="flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-16">
         <div className="lg:w-1/6">
           <a href="#">
             <SectionCard

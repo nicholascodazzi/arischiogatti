@@ -3,51 +3,51 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Arischiogatti - Home"
+  title: "Arischiogatti - Home",
 };
 
-const montserrat = localFont({
+export const montserrat = localFont({
   src: [
     {
       path: "./fonts/Montserrat-Regular.ttf",
       weight: "400",
-      style: "normal"
+      style: "normal",
     },
     {
       path: "./fonts/Montserrat-Italic.ttf",
       weight: "400",
-      style: "italic"
+      style: "italic",
     },
     {
       path: "./fonts/Montserrat-Medium.ttf",
       weight: "500",
-      style: "medium"
+      style: "medium",
     },
     {
       path: "./fonts/Montserrat-Bold.ttf",
       weight: "700",
-      style: "bold"
+      style: "bold",
     },
     {
       path: "./fonts/Montserrat-SemiBold.ttf",
       weight: "600",
-      style: "semibold"
+      style: "semibold",
     },
     {
       path: "./fonts/Montserrat-BoldItalic.ttf",
       weight: "700",
-      style: "italic"
+      style: "italic",
     },
     {
       path: "./fonts/Montserrat-Black.ttf",
       weight: "900",
-      style: "black"
-    }
-  ]
+      style: "black",
+    },
+  ],
 });
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {

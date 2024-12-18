@@ -5,7 +5,7 @@ import {
   Pagination,
   Scrollbar,
   Autoplay,
-  EffectFade
+  EffectFade,
 } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
@@ -13,39 +13,44 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import AdoptionSliderCard from "./subcomponents/Adoption-Swiper-Card";
+import TitleSubtitle from "./subcomponents/Title-Subtitle";
 export default function Adoptions() {
   return (
     <>
-      <div className="w-full flex justify-center my-8 ">
-        <p className="font-bold text-violet-700 lg:text-4xl text-3xl drop-shadow-xl">
-          Appelli
-        </p>
-      </div>
+      <TitleSubtitle
+        title={"Appelli"}
+        subtitle={"Ogni gatto ha una storia da raccontare: scopri la tua."}
+      />
 
       <div>
         <div className="lg:flex lg:justify-center">
           <Swiper
             // install Swiper modules
             modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
-            className="lg:h-[500px] lg:w-10/12"
+            className="h-[500px] w-11/12 md:w-1/2 lg:w-10/12"
             // effect={"fade"}
             centeredSlides={true}
             // fadeEffect={{ crossFade: true }}
-            // autoplay={{
-            //   delay: 2500,
-            //   disableOnInteraction: false
-            // }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             grabCursor={true}
             loop={true}
             breakpoints={{
-              0:{
+              0: {
                 slidesPerView: 1,
+                spaceBetween: 50,
               },
-              768:{
+              1024: {
                 slidesPerView: 3,
-                spaceBetween: 125
-              }}
-            }
+                spaceBetween: 50,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
           >
             <SwiperSlide>
               <AdoptionSliderCard
@@ -107,11 +112,11 @@ export default function Adoptions() {
         </div>
       </div>
 
-      <div className="lg:w-full lg:flex lg:justify-center lg:my-8">
-        <div className="lg:w-2/3 lg:py-8 lg:px-16 lg:text-2xl lg:drop-shadow-xl text-center text-white font-semibold bg-violet-400">
-          <p className="lg:drop-shadow-xl">Abbiamo Aiutato</p>
-          <p className="lg:text-5xl lg:drop-shadow-xl font-bold">1942</p>
-          <p className="lg:drop-shadow-xl">Mici a Trovare Casa</p>
+      <div className="mb-8 flex w-full justify-center">
+        <div className="w-2/3 rounded-lg bg-violet-400 px-8 py-4 text-center text-xl font-semibold text-white lg:px-16 lg:py-8 lg:text-2xl lg:drop-shadow-xl">
+          <p className="drop-shadow-xl">Abbiamo Aiutato</p>
+          <p className="text-4xl font-bold drop-shadow-xl lg:text-5xl">1942</p>
+          <p className="drop-shadow-xl">Mici a Trovare Casa</p>
         </div>
       </div>
     </>

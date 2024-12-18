@@ -1,8 +1,8 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./templates/Navbar";
 import Carousel from "./components/Carousel";
 import Sections from "./components/Sections";
 import Adoptions from "./components/Adoptions";
-import Footer from "./components/Footer";
+import Footer from "./templates/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Carousel />
       <Sections />
       <Adoptions />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
