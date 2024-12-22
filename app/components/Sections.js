@@ -7,7 +7,7 @@ export default function Sections() {
       <TitleSubtitle
         title={"Esplora"}
         subtitle={
-          " Scopri tutto ciò che riguarda Arischiogatti e resta sempre aggiornato."
+          " Scopri tutto ciò che riguarda Arischiogatti e resta sempre aggiornato"
         }
       />
       <div className="flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-16">

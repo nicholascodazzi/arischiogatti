@@ -29,7 +29,7 @@ export default function Navbar() {
       {/* //Mobile Menu  */}
       <nav className="max-w-full lg:hidden">
         <div className="flex h-28 items-center justify-between px-8 shadow-[0_1px_5px_1px_rgba(0,0,0,0.3)]">
-          <div>
+          <div className="lg:w-auto w-3/4">
             <Image
               src="/images/arischiogatti/logo.png"
               width={250}

@@ -1,11 +1,5 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Grid, Pagination } from "swiper/modules";
-// Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/grid";
-// import "swiper/css/pagination";
-import "swiper/css/bundle";
 
 import CatListCard from "./subcomponents/CatList-Card";
 
@@ -24,35 +18,12 @@ export default function CatList() {
 
   return (
     <>
-      <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 5,
-          fill: "row",
-        }}
-        spaceBetween={32}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Grid, Pagination]}
-        className="text-black"
-      >
-        {jsonData.length > 0 ? (
-          <>
-            {jsonData.map((item) => (
-              <SwiperSlide key={item.name}>
-                <CatListCard
-                  image="/images/ui/carousel/cat-1.jpg"
-                  name={item.name}
-                  sex={item.sex}
-                />
-              </SwiperSlide>
-            ))}
-          </>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </Swiper>
+      <div className="md:gtext-black grid grid-cols-2 gap-4 text-black">
+        <div>Ciao</div>
+        <div>Ciao</div>
+        <div>Ciao</div>
+        <div>Ciao</div>
+      </div>
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function Adoptions() {
     <>
       <TitleSubtitle
         title={"Appelli"}
-        subtitle={"Ogni gatto ha una storia da raccontare: scopri la tua."}
+        subtitle={"Ogni gatto ha una storia da raccontare"}
       />
 
       <div>
