@@ -113,7 +113,7 @@ export default function Adoptions() {
       </div>
 
       <div className="mb-8 flex w-full justify-center">
-        <div className="w-2/3 rounded-lg bg-violet-400 px-8 py-4 text-center text-xl font-semibold text-white lg:px-16 lg:py-8 lg:text-2xl lg:drop-shadow-xl">
+        <div className="w-2/3 rounded-lg bg-violet-400 px-8 py-4 text-center text-base font-semibold text-white lg:px-16 lg:py-8 lg:text-2xl lg:drop-shadow-xl">
           <p className="drop-shadow-xl">Abbiamo Aiutato</p>
           <p className="text-4xl font-bold drop-shadow-xl lg:text-5xl">1942</p>
           <p className="drop-shadow-xl">Mici a Trovare Casa</p>

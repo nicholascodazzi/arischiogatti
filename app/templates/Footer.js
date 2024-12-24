@@ -10,17 +10,18 @@ import FooterVoice from "./subcomponents/FooterVoice";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="flex flex-wrap items-center gap-8 bg-violet-400 px-12 py-8 lg:grid-cols-5">
-        <div className="flex flex-col">
+    <footer className="bg-violet-400 px-12 py-8">
+      <div className="flex flex-col items-center gap-4 lg:flex lg:flex-row lg:justify-center lg:gap-16">
+        <div>
           <Image
             src="/images/arischiogatti/logo_white.png"
             width={350}
             height={250}
-            alt=""
+            alt="Arischiogatti Logo"
           />
         </div>
-        <div className="flex w-1/5 flex-col">
+
+        <div className="flex flex-col">
           <FooterVoice
             title={"Sede Operativa"}
             subtitle={
@@ -28,45 +29,50 @@ export default function Footer() {
             }
           />
         </div>
-
-        <div className="flex w-1/5 flex-col">
+        <div className="flex flex-col">
           <FooterVoice
             title={"Contatti"}
             subtitle={
-              "+ 39 338 385 8920, anche su WhatsApp \n associazione.arischiogatti@gmail.com"
-            }
-          />
-        </div>
-        <div className="flex w-1/5 flex-col">
-          <FooterVoice
-            title={"Avviso"}
-            subtitle={
-              "Essendo tutti volontari se non ti rispondiamo subito al telefono, mandaci un WhatsApp e \n sarà nostra cura rispondere quanto prima"
+              "+39 338 385 8920, anche su WhatsApp \n associazione.arischiogatti@gmail.com"
             }
           />
         </div>
 
-        <div className="flex w-1/5 justify-center gap-8">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            width={35}
-            className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out md:text-4xl"
-          />
-          <FontAwesomeIcon
-            icon={faInstagram}
-            width={35}
-            className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out md:text-4xl"
-          />
-          <FontAwesomeIcon
-            icon={faYoutube}
-            width={35}
-            className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out md:text-4xl"
-          />
-          <FontAwesomeIcon
-            icon={faTiktok}
-            width={35}
-            className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out md:text-4xl"
-          />
+        <div className="flex justify-center">
+          <ul className="flex space-x-10">
+            <li>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out lg:text-4xl"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out lg:text-4xl"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out lg:text-4xl"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faTiktok}
+                  className="text-3xl text-white duration-200 hover:scale-125 hover:cursor-pointer hover:ease-in-out lg:text-4xl"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
