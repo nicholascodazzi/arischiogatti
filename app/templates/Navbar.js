@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import NavTag from "../components/subcomponents/NavTag";
+import NavTag from "./subcomponents/NavTag";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,6 +10,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -29,7 +30,7 @@ export default function Navbar() {
       {/* //Mobile Menu  */}
       <nav className="max-w-full lg:hidden">
         <div className="flex h-28 items-center justify-between px-8 shadow-[0_1px_5px_1px_rgba(0,0,0,0.3)]">
-          <div className="lg:w-auto w-3/4">
+          <div className="w-3/4 lg:w-auto">
             <Image
               src="/images/arischiogatti/logo.png"
               width={250}
@@ -59,13 +60,17 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col items-center gap-5 text-xl font-bold">
-            <NavTag tagName="Home" />
-            <NavTag tagName="Adozioni" />
-            <NavTag tagName="Smarriti" />
-            <NavTag tagName="Chi Siamo" />
-            <NavTag tagName="Comunicazioni" />
-            <NavTag tagName="Donazioni" />
-            <NavTag tagName="Contatti" />
+            <Router>
+              <Routes>
+                <Route path="/" element={<NavTag tagName="Home" />} />
+                <Route path="/adozioni" element={<NavTag tagName="Adozioni" />} />
+                <Route path="/smarriti" element={<NavTag tagName="Smarriti" />} />
+                <Route path="/chi-siamo" element={<NavTag tagName="Chi Siamo" />} />
+                <Route path="/comunicazioni" element={<NavTag tagName="Comunicazioni" />} />
+                <Route path="/donazioni" element={<NavTag tagName="Donazioni" />} />
+                <Route path="/contatti" element={<NavTag tagName="Contatti" />} />
+              </Routes>
+            </Router>
           </div>
         </div>
       )}

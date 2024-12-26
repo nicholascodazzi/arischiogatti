@@ -28,7 +28,7 @@ export default function CatListCard({ id, image, name, sex }) {
           <div></div>
         </div>
         <div className="lg:flex lg:justify-center lg:gap-4">
-          <a href={`/Adozioni/Gatto/?id=` + id + "&name=" + name}>
+          <a href={`/adozioni/` + name + `?id=` + id}>
             <button className="bg-violet-600 font-bold hover:bg-violet-800 lg:rounded-xl lg:p-2">
               Dettagli
             </button>

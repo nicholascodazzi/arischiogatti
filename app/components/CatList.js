@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import CatListCard from "./subcomponents/CatList-Card";
 
 export default function CatList() {
