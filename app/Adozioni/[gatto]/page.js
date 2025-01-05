@@ -42,7 +42,7 @@ export default function CatDetail() {
     <div className="flex justify-center">
       <div className="mx-4 my-8 rounded-xl bg-violet-400 p-6 sm:mx-0 sm:w-2/3 lg:my-8 lg:p-4 xl:w-1/2">
         <div className="text-2xl font-bold lg:text-3xl xl:text-4xl">
-          <p>{catData["NAME"]}</p>
+          <p className="capitalize">{catData["NAME"]}</p>
         </div>
         <div className="lg:mt-4 lg:flex">
           <div className="w-full lg:w-3/5">
@@ -60,7 +60,7 @@ export default function CatDetail() {
                 icon={catData["SEX"] == "M" ? faMars : faVenus}
                 color={"white"}
                 width={30}
-                className="ml-2 text-3xl"
+                className="ml-2 text-2xl"
               />
               <p>{catData["SEX"] == "M" ? "Maschio" : "Femmina"}</p>
             </div>
@@ -70,7 +70,7 @@ export default function CatDetail() {
                 icon={faDna}
                 color={"white"}
                 width={30}
-                className="ml-2 text-3xl"
+                className="ml-2 text-2xl"
               />
               <p>{catData["RACE"]}</p>
             </div>
@@ -79,7 +79,7 @@ export default function CatDetail() {
                 icon={faCakeCandles}
                 color={"white"}
                 width={30}
-                className="ml-2 text-3xl"
+                className="ml-2 text-2xl"
               />
               <p>{Moment(catData["BIRTHDAY"]).format("D-MM-YYYY")}</p>
             </div>
@@ -88,7 +88,7 @@ export default function CatDetail() {
                 icon={faSyringe}
                 color={"white"}
                 width={30}
-                className="ml-2 text-3xl"
+                className="ml-2 text-2xl"
               />
               <p>
                 {catData["STERILIZED"] == 1
@@ -102,7 +102,7 @@ export default function CatDetail() {
                 icon={faVirusSlash}
                 color={"white"}
                 width={30}
-                className="ml-2 text-3xl"
+                className="ml-2 text-2xl"
               />
               <p>
                 {catData["VACCINATED"] == 1 ? "Vaccinato" : "Non Vaccinato"}
@@ -113,7 +113,7 @@ export default function CatDetail() {
                 icon={faHouse}
                 color={"white"}
                 width={30}
-                className="ml-2 text-3xl"
+                className="ml-2 text-2xl"
               />
               <p>{catData["CURRENT_PLACE"]}</p>
             </div>
@@ -132,7 +132,7 @@ export default function CatDetail() {
                 />
                 <p className="my-2 text-xl font-bold lg:text-2xl">Carattere</p>
               </div>
-              <p>{catData["CHARACTER"]}</p>
+              <p>{catData["CAT_CHARACTER"]}</p>
             </div>
             <div className="lg:fle lg:flex-col">
               <div className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function CatDetail() {
                 />
                 <p className="my-2 text-xl font-bold lg:text-2xl">Storia</p>
               </div>
-              <p>{catData["HISTORY"]}</p>
+              <p>{catData["CAT_HISTORY"]}</p>
             </div>
             <div className="lg:fle lg:flex-col">
               <div className="flex items-center gap-2">
@@ -158,7 +158,7 @@ export default function CatDetail() {
                   Bisogni Particolari
                 </p>
               </div>
-              <p>{catData["NEEDS"]}</p>
+              <p>{catData["CAT_NEEDS"]}</p>
             </div>
           </div>
         </div>

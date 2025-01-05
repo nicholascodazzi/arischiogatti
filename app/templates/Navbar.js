@@ -9,8 +9,7 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -60,17 +59,44 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col items-center gap-5 text-xl font-bold">
-            <Router>
+            {/* <Router>
               <Routes>
-                <Route path="/" element={<NavTag tagName="Home" />} />
-                <Route path="/adozioni" element={<NavTag tagName="Adozioni" />} />
-                <Route path="/smarriti" element={<NavTag tagName="Smarriti" />} />
-                <Route path="/chi-siamo" element={<NavTag tagName="Chi Siamo" />} />
-                <Route path="/comunicazioni" element={<NavTag tagName="Comunicazioni" />} />
-                <Route path="/donazioni" element={<NavTag tagName="Donazioni" />} />
-                <Route path="/contatti" element={<NavTag tagName="Contatti" />} />
+                <Route path="/" element={<NavTag tagName="Home" Link="/" />} />
+                <Route
+                  path="/adozioni"
+                  element={<NavTag tagName="Adozioni" Link="/adozioni" />}
+                />
+                <Route
+                  path="/smarriti"
+                  element={<NavTag tagName="Smarriti" Link="/smarriti" />}
+                />
+                <Route
+                  path="/chi-siamo"
+                  element={<NavTag tagName="Chi Siamo" Link="/chi-siamo" />}
+                />
+                <Route
+                  path="/comunicazioni"
+                  element={
+                    <NavTag tagName="Comunicazioni" Link="/comunicazioni" />
+                  }
+                />
+                <Route
+                  path="/donazioni"
+                  element={<NavTag tagName="Donazioni" Link="/donazioni" />}
+                />
+                <Route
+                  path="/contatti"
+                  element={<NavTag tagName="Contatti" Link="/contatti" />}
+                />
               </Routes>
-            </Router>
+            </Router> */}
+            <NavTag tagName="Home" path="/" />
+            <NavTag tagName="Adozioni" path="/adozioni" />
+            <NavTag tagName="Smarriti" path="/smarriti" />
+            <NavTag tagName="Chi Siamo" path="/chi-siamo" />
+            <NavTag tagName="Comunicazioni" path="/comunicazioni" />
+            <NavTag tagName="Donazioni" path="/donazioni" />
+            <NavTag tagName="Contatti" path="/contatti" />
           </div>
         </div>
       )}

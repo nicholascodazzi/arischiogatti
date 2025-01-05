@@ -15,7 +15,7 @@ export default function CatListCard({ id, image, name, sex }) {
         </div>
         <div className="font-bold lg:flex lg:justify-center lg:p-4 lg:text-2xl">
           <div className="lg:flex lg:items-center">
-            <p>
+            <p className="capitalize">
               {name}
               <FontAwesomeIcon
                 icon={sex == "M" ? faMars : faVenus}
