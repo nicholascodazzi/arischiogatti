@@ -25,7 +25,7 @@ export default function Footer() {
           <FooterVoice
             title={"Sede Operativa"}
             subtitle={
-              "Via de Chirico, snc - Crema (CR) \n ci troviamo di fronte al n. 10"
+              "Via de Chirico, snc - Crema (Cr) \n ci troviamo di fronte al n. 10"
             }
           />
         </div>
