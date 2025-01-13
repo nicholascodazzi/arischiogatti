@@ -128,11 +128,11 @@ export default function CatDetail() {
                   icon={faPaw}
                   color={"white"}
                   width={30}
-                  className="ml-2 text-3xl"
+                  className="text-3xl"
                 />
                 <p className="my-2 text-xl font-bold lg:text-2xl">Carattere</p>
               </div>
-              <p>{catData["CAT_CHARACTER"]}</p>
+              <p>{catData["CHARACTER"]}</p>
             </div>
             <div className="lg:fle lg:flex-col">
               <div className="flex items-center gap-2">
@@ -140,11 +140,11 @@ export default function CatDetail() {
                   icon={faBookOpen}
                   color={"white"}
                   width={30}
-                  className="ml-2 text-3xl"
+                  className="text-3xl"
                 />
                 <p className="my-2 text-xl font-bold lg:text-2xl">Storia</p>
               </div>
-              <p>{catData["CAT_HISTORY"]}</p>
+              <p>{catData["HISTORY"]}</p>
             </div>
             <div className="lg:fle lg:flex-col">
               <div className="flex items-center gap-2">
@@ -152,13 +152,13 @@ export default function CatDetail() {
                   icon={faSuitcaseMedical}
                   color={"white"}
                   width={30}
-                  className="ml-2 text-3xl"
+                  className="text-3xl"
                 />
                 <p className="my-2 text-xl font-bold lg:text-2xl">
                   Bisogni Particolari
                 </p>
               </div>
-              <p>{catData["CAT_NEEDS"]}</p>
+              <p>{catData["NEEDS"]}</p>
             </div>
           </div>
         </div>

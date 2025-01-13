@@ -4,7 +4,7 @@ import CatListCard from "./subcomponents/CatList-Card";
 export default function CatList() {
   const [jsonData, setJsonData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const [itemsPerPage, setItemsPerPage] = useState(9); // Default to 9
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,19 +16,44 @@ export default function CatList() {
     fetchData();
   }, []);
 
+  const getWindowWidth = () => {
+    // Function to get the window width
+    const { innerWidth: width } = window;
+    return width;
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(
+        getWindowWidth() <= 1024 ? (getWindowWidth() <= 640 ? 5 : 8) : 9,
+      );
+    };
+    handleResize(); // Call initially to set itemsPerPage correctly
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentCats = jsonData.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // Scroll to the top of the page when paginating
+    window.scrollTo(0, 0);
+  };
 
   const totalPages = Math.ceil(jsonData.length / itemsPerPage);
 
   return (
     <>
-      <div className="lg:flex lg:justify-center lg:p-12">
+      <div
+        className="flex flex-col p-4 lg:flex lg:flex-row lg:justify-center"
+        key={itemsPerPage}
+      >
         <div
-          className="lg:grid-rows-auto text-white lg:grid lg:grid-cols-3 lg:gap-8"
+          className="grid-rows-auto grid grid-cols-1 place-items-center gap-8 text-white sm:grid-cols-2 lg:grid-cols-3 lg:place-items-start"
           id="catTable"
         >
           {currentCats.length > 0 ? (
@@ -46,12 +71,12 @@ export default function CatList() {
           )}
         </div>
       </div>
-      <div id="pagination" className="flex justify-center text-white lg:mb-4">
+      <div id="pagination" className="mb-4 flex justify-center text-white">
         {currentPage > 1 && (
           <button
             id="prev"
             onClick={() => paginate(currentPage - 1)}
-            className="bg-violet-400 hover:bg-violet-600 lg:rounded-md lg:px-4 lg:py-2"
+            className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600"
           >
             Prev.
           </button>
@@ -61,7 +86,7 @@ export default function CatList() {
             key={number}
             onClick={() => paginate(number)}
             style={{ margin: "0 5px", padding: "5px 10px" }}
-            className={`hover:bg-violet-600 lg:rounded-md lg:px-4 lg:py-2 ${
+            className={`rounded-md px-4 py-2 hover:bg-violet-600 ${
               number === currentPage ? "bg-violet-600" : "bg-violet-400"
             }`}
           >
@@ -72,7 +97,7 @@ export default function CatList() {
           <button
             id="next"
             onClick={() => paginate(currentPage + 1)}
-            className="bg-violet-400 hover:bg-violet-600 lg:rounded-md lg:px-4 lg:py-2"
+            className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600"
           >
             Succ.
           </button>

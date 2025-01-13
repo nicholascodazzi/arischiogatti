@@ -21,7 +21,7 @@ export default function Navbar() {
     } else {
       setShowMenu(false);
     }
-    console.log(showMenu);
+    // console.log(showMenu);
   }
 
   return (
@@ -59,44 +59,13 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col items-center gap-5 text-xl font-bold">
-            {/* <Router>
-              <Routes>
-                <Route path="/" element={<NavTag tagName="Home" Link="/" />} />
-                <Route
-                  path="/adozioni"
-                  element={<NavTag tagName="Adozioni" Link="/adozioni" />}
-                />
-                <Route
-                  path="/smarriti"
-                  element={<NavTag tagName="Smarriti" Link="/smarriti" />}
-                />
-                <Route
-                  path="/chi-siamo"
-                  element={<NavTag tagName="Chi Siamo" Link="/chi-siamo" />}
-                />
-                <Route
-                  path="/comunicazioni"
-                  element={
-                    <NavTag tagName="Comunicazioni" Link="/comunicazioni" />
-                  }
-                />
-                <Route
-                  path="/donazioni"
-                  element={<NavTag tagName="Donazioni" Link="/donazioni" />}
-                />
-                <Route
-                  path="/contatti"
-                  element={<NavTag tagName="Contatti" Link="/contatti" />}
-                />
-              </Routes>
-            </Router> */}
             <NavTag tagName="Home" path="/" />
-            <NavTag tagName="Adozioni" path="/adozioni" />
-            <NavTag tagName="Smarriti" path="/smarriti" />
-            <NavTag tagName="Chi Siamo" path="/chi-siamo" />
-            <NavTag tagName="Comunicazioni" path="/comunicazioni" />
-            <NavTag tagName="Donazioni" path="/donazioni" />
-            <NavTag tagName="Contatti" path="/contatti" />
+            <NavTag tagName="Adozioni" path="adozioni" />
+            <NavTag tagName="Smarriti" path="smarriti" />
+            <NavTag tagName="Chi Siamo" path="chi-siamo" />
+            <NavTag tagName="Comunicazioni" path="comunicazioni" />
+            <NavTag tagName="Donazioni" path="donazioni" />
+            <NavTag tagName="Contatti" path="contatti" />
           </div>
         </div>
       )}
@@ -134,13 +103,13 @@ export default function Navbar() {
 
             {/* NavTags */}
             <div className="lg:flex lg:items-center lg:justify-center lg:gap-8 lg:font-bold xl:gap-16">
-              <NavTag tagName="Home" />
-              <NavTag tagName="Adozioni" />
-              <NavTag tagName="Smarriti" />
-              <NavTag tagName="Chi Siamo" />
-              <NavTag tagName="Comunicazioni" />
-              <NavTag tagName="Donazioni" />
-              <NavTag tagName="Contatti" />
+              <NavTag tagName="Home" path="/" />
+              <NavTag tagName="Adozioni" path="adozioni" />
+              <NavTag tagName="Smarriti" path="smarriti" />
+              <NavTag tagName="Chi Siamo" path="chi-siamo" />
+              <NavTag tagName="Comunicazioni" path="comunicazioni" />
+              <NavTag tagName="Donazioni" path="donazioni" />
+              <NavTag tagName="Contatti" path="contatti" />
             </div>
           </div>
         </div>
