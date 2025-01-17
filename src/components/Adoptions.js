@@ -54,6 +54,7 @@ export default function Adoptions() {
           >
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat1"
                 name="Luna"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
@@ -61,6 +62,7 @@ export default function Adoptions() {
             </SwiperSlide>
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat2"
                 name="Oliver e Sidh"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
@@ -68,6 +70,7 @@ export default function Adoptions() {
             </SwiperSlide>
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat3"
                 name="Ginger"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
@@ -75,6 +78,7 @@ export default function Adoptions() {
             </SwiperSlide>
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat4"
                 name="Milo"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
@@ -82,6 +86,7 @@ export default function Adoptions() {
             </SwiperSlide>
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat5"
                 name="Stellina"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
@@ -89,6 +94,7 @@ export default function Adoptions() {
             </SwiperSlide>
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat6"
                 name="Zen"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
@@ -96,6 +102,7 @@ export default function Adoptions() {
             </SwiperSlide>
             <SwiperSlide>
               <AdoptionSliderCard
+                image={"/images/ui/adoptions/pepper.jpg"}
                 image_description="cat7"
                 name="Ombra"
                 description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."

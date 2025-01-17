@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./templates/Navbar";
-import Footer from "./templates/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Arischiogatti - Home",
@@ -11,37 +11,37 @@ export const metadata: Metadata = {
 export const montserrat = localFont({
   src: [
     {
-      path: "./fonts/Montserrat-Regular.ttf",
+      path: "../../public/fonts/Montserrat-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/Montserrat-Italic.ttf",
+      path: "../../public/fonts/Montserrat-Italic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./fonts/Montserrat-Medium.ttf",
+      path: "../../public/fonts/Montserrat-Medium.ttf",
       weight: "500",
       style: "medium",
     },
     {
-      path: "./fonts/Montserrat-Bold.ttf",
+      path: "../../public/fonts/Montserrat-Bold.ttf",
       weight: "700",
       style: "bold",
     },
     {
-      path: "./fonts/Montserrat-SemiBold.ttf",
+      path: "../../public/fonts/Montserrat-SemiBold.ttf",
       weight: "600",
       style: "semibold",
     },
     {
-      path: "./fonts/Montserrat-BoldItalic.ttf",
+      path: "../../public/fonts/Montserrat-BoldItalic.ttf",
       weight: "700",
       style: "italic",
     },
     {
-      path: "./fonts/Montserrat-Black.ttf",
+      path: "../../public/fonts/Montserrat-Black.ttf",
       weight: "900",
       style: "black",
     },

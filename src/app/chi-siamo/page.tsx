@@ -1,7 +1,6 @@
 "use client";
-import Title from "../components/subcomponents/Title";
+import Title from "../../components/subcomponents/Title";
 import Image from "next/image";
-import TitleSubtitle from "../components/subcomponents/Title-Subtitle";
 export default function Adoptions() {
   return (
     <>

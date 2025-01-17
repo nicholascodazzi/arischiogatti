@@ -1,5 +1,5 @@
 "use client";
-import Title from "../components/subcomponents/Title";
+import Title from "../../components/subcomponents/Title";
 export default function Adoptions() {
   return (
     <>

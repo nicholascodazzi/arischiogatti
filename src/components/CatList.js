@@ -8,11 +8,10 @@ export default function CatList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/api/get/cats");
+      const response = await fetch("/api/cats");
       const data = await response.json();
-      setJsonData(data.rows);
+      setJsonData(data);
     };
-
     fetchData();
   }, []);
 
@@ -59,11 +58,11 @@ export default function CatList() {
           {currentCats.length > 0 ? (
             currentCats.map((cat) => (
               <CatListCard
-                key={cat.ID}
-                id={cat.ID}
-                name={cat.NAME}
-                image={cat.IMAGE}
-                sex={cat.SEX}
+                key={cat.id}
+                id={cat.id}
+                name={cat.name}
+                image={cat.image}
+                sex={cat.sex}
               />
             ))
           ) : (

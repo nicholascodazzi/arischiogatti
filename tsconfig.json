@@ -22,6 +22,16 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/types/app/adozioni/page.tsx", ".next/types/app/layout.tsx", ".next/types/app/donazioni/page.tsx", ".next/types/app/contatti/page.tsx", ".next/types/app/chi-siamo/page.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/types/src/app/adozioni/page.tsx",
+    ".next/types/src/app/layout.tsx",
+    ".next/types/src/app/donazioni/page.tsx",
+    ".next/types/src/app/contatti/page.tsx",
+    ".next/types/src/app/chi-siamo/page.tsx"
+  ],
   "exclude": ["node_modules"]
 }

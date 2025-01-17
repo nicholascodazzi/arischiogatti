@@ -1,6 +1,6 @@
-import Carousel from "./components/Carousel";
-import Sections from "./components/Sections";
-import Adoptions from "./components/Adoptions";
+import Carousel from "../components/Carousel";
+import Sections from "../components/Sections";
+import Adoptions from "../components/Adoptions";
 import Head from "next/head";
 import Script from "next/script";
 
