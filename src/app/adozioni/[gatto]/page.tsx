@@ -16,6 +16,7 @@ import {
   faSuitcaseMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import Moment from "moment";
+
 export default function CatDetail() {
   Moment.locale("it");
   const [catData, setCatData] = useState([]);

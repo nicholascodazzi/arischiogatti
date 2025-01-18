@@ -1,10 +1,10 @@
 "use client";
-import Title from "../components/subcomponents/Title";
-import DonationCard from "../components/subcomponents/Donation-Card";
+import Title from "../../components/Title";
+import DonationCard from "../../components/DonationCard";
 export default function Adoptions() {
   return (
     <>
-      <div className="mx-8 my-4 flex flex-col items-center justify-center text-base font-semibold text-violet-500 md:mx-32 lg:h-[67.5vh] lg:mx-48 xl:mx-80">
+      <div className="mx-8 my-4 flex flex-col items-center justify-center text-base font-semibold text-violet-500 md:mx-32 lg:mx-48 lg:h-[67.5vh] xl:mx-80">
         <Title>Donazioni</Title>
         <div className="mb-4 mt-4 flex flex-col items-center text-center lg:text-left">
           <p className="italic">

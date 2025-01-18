@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import NavTag from "./subcomponents/NavTag";
+import NavTag from "./NavTag";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -60,12 +60,12 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col items-center gap-5 text-xl font-bold">
             <NavTag tagName="Home" path="/" />
-            <NavTag tagName="Adozioni" path="adozioni" />
-            <NavTag tagName="Smarriti" path="smarriti" />
-            <NavTag tagName="Chi Siamo" path="chi-siamo" />
-            <NavTag tagName="Comunicazioni" path="comunicazioni" />
-            <NavTag tagName="Donazioni" path="donazioni" />
-            <NavTag tagName="Contatti" path="contatti" />
+            <NavTag tagName="Adozioni" path="/adozioni" />
+            <NavTag tagName="Smarriti" path="/smarriti" />
+            <NavTag tagName="Chi Siamo" path="/chi-siamo" />
+            <NavTag tagName="Comunicazioni" path="/comunicazioni" />
+            <NavTag tagName="Donazioni" path="/donazioni" />
+            <NavTag tagName="Contatti" path="/contatti" />
           </div>
         </div>
       )}
@@ -104,12 +104,12 @@ export default function Navbar() {
             {/* NavTags */}
             <div className="lg:flex lg:items-center lg:justify-center lg:gap-8 lg:font-bold xl:gap-16">
               <NavTag tagName="Home" path="/" />
-              <NavTag tagName="Adozioni" path="adozioni" />
-              <NavTag tagName="Smarriti" path="smarriti" />
-              <NavTag tagName="Chi Siamo" path="chi-siamo" />
-              <NavTag tagName="Comunicazioni" path="comunicazioni" />
-              <NavTag tagName="Donazioni" path="donazioni" />
-              <NavTag tagName="Contatti" path="contatti" />
+              <NavTag tagName="Adozioni" path="/adozioni" />
+              <NavTag tagName="Smarriti" path="/smarriti" />
+              <NavTag tagName="Chi Siamo" path="/chi-siamo" />
+              <NavTag tagName="Comunicazioni" path="/comunicazioni" />
+              <NavTag tagName="Donazioni" path="/donazioni" />
+              <NavTag tagName="Contatti" path="/contatti" />
             </div>
           </div>
         </div>

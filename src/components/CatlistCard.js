@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMars, faVenus } from "@fortawesome/free-solid-svg-icons";
-export default function CatListCard({ id, image, name, sex }) {
+export default function CatlistCard({ id, image, name, sex }) {
   return (
     <div className="h-auto max-w-96 rounded-xl bg-violet-400">
       <div className="flex flex-col">

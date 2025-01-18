@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function AdoptionSliderCard({
+export default function AdoptionSwiperCard({
   image,
   image_description,
   name,
