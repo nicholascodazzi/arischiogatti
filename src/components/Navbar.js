@@ -9,19 +9,16 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
   function openMenu() {
-    // console.log(showMenu);
     if (showMenu === false) {
       setShowMenu(true);
     } else {
       setShowMenu(false);
     }
-    // console.log(showMenu);
   }
 
   return (
@@ -76,7 +73,7 @@ export default function Navbar() {
           <div className="lg:flex lg:h-full lg:items-center lg:justify-center">
             <Image
               src="/images/arischiogatti/logo.png"
-              width={350}
+              width={300}
               height={250}
               alt=""
             />

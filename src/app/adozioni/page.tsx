@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import CatlistCard from "../../components/CatlistCard";
 import Title from "../../components/Title";
+import { getCats } from "@/src/data/cats/queries";
 
 export default function Adoptions() {
   const [jsonData, setJsonData] = useState([]);
@@ -10,12 +11,13 @@ export default function Adoptions() {
   const [itemsPerPage, setItemsPerPage] = useState(9); // Default to 9
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/cats");
-      const data = await response.json();
-      setJsonData(data);
-    };
-    fetchData();
+    // const fetchData = async () => {
+    //   const response = await fetch("/api/cats");
+    //   const data = await response.json();
+    //   setJsonData(data);
+    // };
+    // fetchData();
+    setJsonData(await  getCats());
   }, []);
 
   const getWindowWidth = () => {

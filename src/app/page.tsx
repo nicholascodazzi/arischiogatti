@@ -32,7 +32,7 @@ export default function Home() {
       <Swiper
         // install Swiper modules
         modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
-        className="mySwiper h-96 lg:h-[30rem]"
+        className="mySwiper h-96 lg:h-[32rem]"
         slidesPerView={1}
         effect={"fade"}
         centeredSlides={true}
@@ -132,7 +132,6 @@ export default function Home() {
             modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
             className="h-[500px] w-11/12 md:w-1/2 lg:w-10/12"
             // effect={"fade"}
-            centeredSlides={true}
             // fadeEffect={{ crossFade: true }}
             autoplay={{
               delay: 2500,
@@ -146,12 +145,8 @@ export default function Home() {
                 spaceBetween: 50,
               },
               1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
-              },
-              1200: {
-                slidesPerView: 3,
-                spaceBetween: 50,
+                slidesPerView: 4,
+                spaceBetween: 30,
               },
             }}
           >

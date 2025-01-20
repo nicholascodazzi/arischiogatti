@@ -1,9 +1,6 @@
 import Link from "next/link";
 
 export default function NavTag({ tagName, path }) {
-  // console.log("tagName:", tagName);
-  // console.log("path:", path);
-
   return (
     <div className="text-center">
       <Link href={path} prefetch={false}>
