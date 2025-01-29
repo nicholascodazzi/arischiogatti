@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import CatlistCard from "./CatlistCard";
-import Title from "./Title";
+import Title from "./../SubComponents/Title";
+import { cats } from "@prisma/client";
 
-export default function Adoptions({cats}) {
-  const [jsonData, setJsonData] = useState(cats);
+export default function Adoptions({ cats }: { cats: cats[] }) {
+  console.log(cats);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9); // Default to 9
 
@@ -28,7 +29,7 @@ export default function Adoptions({cats}) {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCats = jsonData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentCats = cats.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -36,7 +37,7 @@ export default function Adoptions({cats}) {
     window.scrollTo(0, 0);
   };
 
-  const totalPages = Math.ceil(jsonData.length / itemsPerPage);
+  const totalPages = Math.ceil(cats.length / itemsPerPage);
 
   return (
     <>

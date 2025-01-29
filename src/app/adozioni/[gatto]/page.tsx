@@ -1,13 +1,15 @@
 import { getSingleCat } from "@/src/data/cats/queries";
-import CatDetail from "../../../components/CatDetail";
+import CatDetail from "../../../components/Adoptions/CatDetail";
 
 export default async function CatDetailPage({
   searchParams,
 }: {
-  searchParams: { id: string };
+  searchParams: Promise<{
+    id: string;
+    [key: string]: string | string[] | undefined;
+  }>;
 }) {
-  // console.log("Params received:", searchParams); // Debugging line
-  const catId = await searchParams.id;
+  const catId = (await searchParams).id;
   const data = await getSingleCat(catId);
   return <CatDetail catData={data} />;
 }

@@ -6,7 +6,7 @@ import {
   faYoutube,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
-import FooterVoice from "./FooterVoice";
+import FooterVoice from "./FooterVoice"
 
 export default function Footer() {
   return (

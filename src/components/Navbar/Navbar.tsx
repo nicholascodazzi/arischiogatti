@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import NavTag from "./NavTag";
+import NavTag from "./NavbarTag";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

@@ -1,6 +1,5 @@
 "use client";
-import Carousel from "../components/Carousel";
-import SectionCard from "../components/SectionsCard";
+import SectionCard from "../components/Sections/SectionsCard";
 import Head from "next/head";
 import Script from "next/script";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,8 +16,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Link from "next/link";
 import Image from "next/image";
-import AdoptionSwiperCard from "../components/AdoptionSwiperCard";
-import TitleSubtitle from "../components/Title-Subtitle";
+import AdoptionSwiperCard from "../components/Adoptions/AdoptionSwiperCard";
+import TitleSubtitle from "../components/SubComponents/Title-Subtitle";
 
 export default function Home() {
   return (
