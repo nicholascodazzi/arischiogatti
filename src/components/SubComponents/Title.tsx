@@ -1,4 +1,4 @@
-export default function Title({ children }) {
+export default function Title({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full">
       <div className="flex justify-center">

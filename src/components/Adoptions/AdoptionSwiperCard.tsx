@@ -1,5 +1,14 @@
 import Image from "next/image";
 
+type AdoptionSwiperCardProps = {
+  image: string;
+  image_description: string;
+  name: string;
+  sex?: string;
+  description: string;
+  url?: string;
+};
+
 export default function AdoptionSwiperCard({
   image,
   image_description,
@@ -7,7 +16,7 @@ export default function AdoptionSwiperCard({
   sex,
   description,
   url,
-}) {
+}: AdoptionSwiperCardProps) {
   return (
     <div className="overflow-hidden rounded-2xl border border-black bg-violet-400 shadow-lg">
       <div className="relative max-h-[250px] min-h-[250px] lg:flex lg:items-center lg:justify-center">
@@ -32,7 +41,7 @@ export default function AdoptionSwiperCard({
         </div>
         <p className="mb-3 font-normal text-white">{description}</p>
         <a
-          href="#"
+          href={url}
           className="inline-flex items-center rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-violet-800 focus:outline-none focus:ring-4"
         >
           Adottalo Subito!

@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-export default function SectionCard({ image, title, description }) {
+export default function SectionCard({
+  image,
+  title,
+  description,
+}: {
+  image: string;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="flex flex-col items-center duration-150 hover:scale-110 hover:ease-in">
       <div className="rounded-full bg-violet-300 p-10">

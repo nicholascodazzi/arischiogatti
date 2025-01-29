@@ -1,4 +1,10 @@
-export default function FooterVoice({ title, subtitle }) {
+export default function FooterVoice({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) {
   return (
     <div className="flex flex-col flex-wrap break-words text-center lg:text-left">
       <p className="text-base font-bold sm:text-lg">{title}</p>

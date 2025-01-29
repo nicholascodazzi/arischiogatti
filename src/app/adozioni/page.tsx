@@ -1,4 +1,4 @@
-import { getCats } from "@/src/data/cats/queries";
+import { getCats } from "@/src/data/cats/getCats";
 import Adoptions from "../../components/Adoptions/Adoptions";
 
 export default async function AdozioniPage() {

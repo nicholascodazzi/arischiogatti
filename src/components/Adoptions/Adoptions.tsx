@@ -5,7 +5,7 @@ import Title from "./../SubComponents/Title";
 import { cats } from "@prisma/client";
 
 export default function Adoptions({ cats }: { cats: cats[] }) {
-  console.log(cats);
+  // console.log(cats);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9); // Default to 9
 
@@ -31,7 +31,7 @@ export default function Adoptions({ cats }: { cats: cats[] }) {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentCats = cats.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => {
+  const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     // Scroll to the top of the page when paginating
     window.scrollTo(0, 0);

@@ -1,7 +1,12 @@
-export default function Input({ type, id, name }) {
+type InputProps = {
+  type: string;
+  id: string;
+  name: string;
+};
+
+export default function Input({ type, id, name }: InputProps) {
   return type === "textarea" ? (
     <textarea
-      type="textarea"
       name={name}
       id={id}
       rows={5}

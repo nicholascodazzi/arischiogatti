@@ -1,7 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBank, faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
-export default function DonationCard({ title, description }) {
+
+export default function DonationCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
     <div className="rounded-xl bg-violet-400 lg:m-0">
       <div className="flex flex-col items-center gap-4 p-4 text-white">

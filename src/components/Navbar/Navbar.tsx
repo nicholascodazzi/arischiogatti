@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
+  
   const [showMenu, setShowMenu] = useState(false);
 
   function openMenu() {

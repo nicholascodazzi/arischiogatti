@@ -14,8 +14,14 @@ import {
   faSuitcaseMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import Moment from "moment";
+import { getCat } from "@/src/data/cats/getCat";
 
-export default function CatDetail({ catData }) {
+export default function CatDetail({
+  catData,
+}: {
+  //we get the type of getCat
+  catData: Awaited<ReturnType<typeof getCat>>;
+}) {
   Moment.locale("it");
 
   return catData ? (
