@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/NavBar";
 import Footer from "../components/Footer/Footer";
 
 export const metadata: Metadata = {
@@ -55,7 +55,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body
+        className={`${montserrat.className} bg-[url('/images/arischiogatti/background-pattern.png')]`}
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -1,117 +1,129 @@
-"use client";
+import { Sheet, SheetTrigger, SheetContent } from "@/src/components/ui/sheet";
+import { Button } from "@/src/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
-import NavTag from "./NavbarTag";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faPhone,
-  faBars,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import NavBarVoice from "./NavBarVoice";
 
-export default function Navbar() {
-  
-  const [showMenu, setShowMenu] = useState(false);
-
-  function openMenu() {
-    if (showMenu === false) {
-      setShowMenu(true);
-    } else {
-      setShowMenu(false);
-    }
-  }
-
+export default function NavBar() {
   return (
-    <>
-      {/* //Mobile Menu  */}
-      <nav className="max-w-full lg:hidden">
-        <div className="flex h-28 items-center justify-between px-8 shadow-[0_1px_5px_1px_rgba(0,0,0,0.3)]">
-          <div className="w-3/4 lg:w-auto">
+    <header className="flex h-32 w-full shrink-0 items-center px-4 md:px-6 justify-between">
+      {/* MOBILE VIEW (TOGGLE NAVIGATION MENU) */}
+
+      <Sheet>
+        {/* Right Side: Mobile Menu Button (Hidden on large screens) */}
+        <div className="flex w-full items-center justify-between lg:hidden">
+          {/* Left Side: Logo (Visible on large screens) */}
+          <Link href="/" className="flex lg:hidden">
             <Image
-              src="/images/arischiogatti/logo.png"
               width={250}
               height={200}
-              alt=""
-            />
-          </div>
-          <div>
-            <FontAwesomeIcon
-              icon={faBars}
-              width={30}
-              onClick={openMenu}
-              className="text-3xl text-violet-500 hover:text-violet-800"
-            />
-          </div>
-        </div>
-      </nav>
-
-      {showMenu && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-90 transition-opacity duration-700 ease-in">
-          <div className="absolute right-8 top-9">
-            <FontAwesomeIcon
-              icon={faXmark}
-              width={30}
-              onClick={openMenu}
-              className="text-4xl text-violet-500 hover:text-violet-800"
-            />
-          </div>
-          <div className="flex flex-col items-center gap-5 text-xl font-bold">
-            <NavTag tagName="Home" path="/" />
-            <NavTag tagName="Adozioni" path="/adozioni" />
-            <NavTag tagName="Smarriti" path="/smarriti" />
-            <NavTag tagName="Chi Siamo" path="/chi-siamo" />
-            <NavTag tagName="Comunicazioni" path="/comunicazioni" />
-            <NavTag tagName="Donazioni" path="/donazioni" />
-            <NavTag tagName="Contatti" path="/contatti" />
-          </div>
-        </div>
-      )}
-
-      {/* //Desktop Menu */}
-      <nav className="hidden lg:block lg:max-w-full">
-        <div className="shadow-[0_1px_5px_1px_rgba(0,0,0,0.3)] lg:flex lg:h-32 lg:w-full lg:items-center lg:justify-between lg:px-8">
-          <div className="lg:flex lg:h-full lg:items-center lg:justify-center">
-            <Image
+              alt="Arischiogatti Logo - Link to Homepage"
               src="/images/arischiogatti/logo.png"
-              width={300}
-              height={250}
-              alt=""
             />
-          </div>
-          <div className="lg:flex lg:flex-col lg:gap-3">
-            <div className="lg:flex lg:items-center lg:justify-end lg:gap-3">
-              <div className="bg-violet-500 font-normal text-white hover:cursor-pointer hover:bg-violet-700 lg:flex lg:w-max lg:items-center lg:gap-3 lg:rounded-full lg:px-4 lg:py-2">
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  width={30}
-                  className="text-2xl text-white"
-                />
-                <div>+ 39 338 385 8920</div>
-              </div>
-              <div className="bg-violet-500 font-normal text-white hover:cursor-pointer hover:bg-violet-700 lg:flex lg:items-center lg:gap-3 lg:rounded-full lg:px-4 lg:py-2">
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  width={30}
-                  className="text-2xl text-white"
-                />
-                <div>associazione.arischiogatti@gmail.com</div>
-              </div>
-            </div>
+          </Link>
+        </div>
 
-            {/* NavTags */}
-            <div className="lg:flex lg:items-center lg:justify-center lg:gap-8 lg:font-bold xl:gap-16">
-              <NavTag tagName="Home" path="/" />
-              <NavTag tagName="Adozioni" path="/adozioni" />
-              <NavTag tagName="Smarriti" path="/smarriti" />
-              <NavTag tagName="Chi Siamo" path="/chi-siamo" />
-              <NavTag tagName="Comunicazioni" path="/comunicazioni" />
-              <NavTag tagName="Donazioni" path="/donazioni" />
-              <NavTag tagName="Contatti" path="/contatti" />
-            </div>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon" className="ml-auto lg:hidden">
+            <MenuIcon className="h-6 w-6" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent side="right">
+          <div className="grid gap-2 py-6">
+            <Link
+              href="#"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Home
+            </Link>
+            <Link
+              href="#"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              About
+            </Link>
+            <Link
+              href="#"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Services
+            </Link>
+            <Link
+              href="#"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Contact
+            </Link>
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      {/* DESKTOP VIEW */}
+
+      <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+        <Image
+          width={300}
+          height={200}
+          alt={"Arischiogatti Logo"}
+          src={"/images/arischiogatti/logo.png"}
+        />
+        <span className="sr-only">Arischiogatti Homepage</span>
+      </Link>
+      <nav className="ml-auto hidden gap-6 lg:flex">
+        <div className="flex flex-col gap-4">
+          <div className="flex justify-end gap-4">
+            <Link
+              href="tel:+39 338 385 8920"
+              className="text-md rounded-full bg-violet-500 px-4 py-2 text-center text-white hover:bg-violet-700"
+              aria-label="Numero di telefono di arischiogatti: +39 338 385 8920"
+            >
+              +39 338 385 8920
+            </Link>
+            <Link
+              href="mailto:associazione.arischiogatti@gmail.com"
+              className="text-md rounded-full bg-violet-500 px-4 py-2 text-center text-white hover:bg-violet-700"
+              aria-label="Invia un'email a Arischiogatti: associazione.arischiogatti@gmail.com"
+            >
+              associazione.arischiogatti@gmail.com
+            </Link>
+          </div>
+          <div className="gap-4 lg:flex">
+            <NavBarVoice href="/adozioni" title="Adozioni" />
+            <NavBarVoice href="/comunicazioni" title="Comunicazioni" />
+            <NavBarVoice href="/smarriti" title="Smarriti" />
+            <NavBarVoice href="/donazioni" title="Donazioni" />
+            <NavBarVoice href="/chi-siamo" title="Chi Siamo" />
+            <NavBarVoice href="/contatti" title="Contatti" />
           </div>
         </div>
       </nav>
-    </>
+    </header>
+  );
+}
+
+function MenuIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
   );
 }
