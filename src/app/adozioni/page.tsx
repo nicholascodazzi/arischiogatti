@@ -1,5 +1,5 @@
-import { getCats } from "@/src/data/cats/getCats";
-import Adoptions from "../../components/Adoptions/Adoptions";
+import { getCats } from "@/src/features/adozioni/getCats";
+import Adoptions from "@/src/features/adozioni/components/adoptions";
 
 export default async function AdozioniPage() {
   const data = await getCats();

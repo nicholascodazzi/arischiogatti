@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import CatlistCard from "./CatlistCard";
-import Title from "./../SubComponents/Title";
+import CatlistCard from "./catCard";
+import Title from "@/src/components/Title";
 import { cats } from "@prisma/client";
 
 export default function Adoptions({ cats }: { cats: cats[] }) {

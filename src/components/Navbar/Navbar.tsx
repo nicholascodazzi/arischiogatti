@@ -10,7 +10,7 @@ export default function NavBar() {
       <NavBarMobile />
 
       {/* DESKTOP VIEW */}
-      <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+      <Link href="/#" className="mr-6 hidden lg:flex" prefetch={false}>
         <Image
           width={300}
           height={200}

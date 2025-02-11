@@ -1,5 +1,5 @@
-import { getCat } from "@/src/data/cats/getCat";
-import CatDetail from "../../../components/Adoptions/CatDetail";
+import { getCat } from "@/src/features/adozioni/getCat";
+import CatDetail from "@/src/features/adozioni/components/catDetail";
 
 export default async function CatDetailPage({
   params,

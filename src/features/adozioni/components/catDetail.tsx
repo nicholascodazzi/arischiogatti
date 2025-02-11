@@ -14,7 +14,7 @@ import {
   faSuitcaseMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import Moment from "moment";
-import { getCat } from "@/src/data/cats/getCat";
+import { getCat } from "@/src/features/cats/getCat";
 
 export default function CatDetail({
   catData,
@@ -26,7 +26,7 @@ export default function CatDetail({
 
   return catData ? (
     <div className="flex justify-center">
-      <div className="mx-4 my-8 rounded-xl bg-violet-400 p-6 sm:mx-0 sm:w-2/3 lg:my-8 lg:p-4 xl:w-1/2">
+      <div className="mx-4 my-8 rounded-xl bg-violet-400 p-6 text-white sm:mx-0 sm:w-2/3 lg:my-8 lg:p-4 xl:w-1/2">
         <div className="text-2xl font-bold lg:text-3xl xl:text-4xl">
           <p className="capitalize">{catData.name}</p>
         </div>

@@ -16,8 +16,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Link from "next/link";
 import Image from "next/image";
-import AdoptionSwiperCard from "../components/Adoptions/AdoptionSwiperCard";
-import TitleSubtitle from "../components/SubComponents/Title-Subtitle";
+import AdoptionSwiperCard from "@/src/features/adozioni/components/catCards";
+import TitleSubtitle from "../components/Title-Subtitle";
 
 export default function Home() {
   return (
