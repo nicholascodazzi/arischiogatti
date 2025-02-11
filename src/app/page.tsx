@@ -1,5 +1,5 @@
 "use client";
-import SectionCard from "../components/Sections/SectionsCard";
+import SectionCard from "@/src/features/homepage/components/sections-cards";
 import Head from "next/head";
 import Script from "next/script";
 import { Swiper, SwiperSlide } from "swiper/react";

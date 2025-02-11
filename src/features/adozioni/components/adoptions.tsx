@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import CatlistCard from "./catCard";
+import CatList from "./catList";
 import Title from "@/src/components/Title";
 import { cats } from "@prisma/client";
 
@@ -52,7 +52,7 @@ export default function Adoptions({ cats }: { cats: cats[] }) {
         >
           {currentCats.length > 0 ? (
             currentCats.map((cat) => (
-              <CatlistCard
+              <CatList
                 key={cat.id}
                 id={cat.id}
                 name={cat.name}
@@ -72,7 +72,7 @@ export default function Adoptions({ cats }: { cats: cats[] }) {
             onClick={() => paginate(currentPage - 1)}
             className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600"
           >
-            Prev.
+            Prec.
           </button>
         )}
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (

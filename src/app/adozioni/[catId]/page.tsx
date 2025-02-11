@@ -1,4 +1,4 @@
-import { getCat } from "@/src/features/adozioni/getCat";
+import { getCat } from "@/src/features/adozioni/queries/get-cat";
 import CatDetail from "@/src/features/adozioni/components/catDetail";
 
 export default async function CatDetailPage({
@@ -6,7 +6,6 @@ export default async function CatDetailPage({
 }: {
   params: Promise<{
     catId: string;
-    // [key: string]: string | string[] | undefined;
   }>;
 }) {
   const id = (await params).catId;

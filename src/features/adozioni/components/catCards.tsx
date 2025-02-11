@@ -1,13 +1,5 @@
 import Image from "next/image";
-
-type AdoptionSwiperCardProps = {
-  image: string;
-  image_description: string;
-  name: string;
-  sex?: string;
-  description: string;
-  url?: string;
-};
+import { AdoptionSwiperCardProps } from "../types";
 
 export default function AdoptionSwiperCard({
   image,

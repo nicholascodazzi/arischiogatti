@@ -2,20 +2,9 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMars, faVenus } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { CatListCardProps } from "../types";
 
-type CatListCardProps = {
-  id: number;
-  image: string | null;
-  name: string | null;
-  sex: string | null;
-};
-
-export default function CatlistCard({
-  id,
-  image,
-  name,
-  sex,
-}: CatListCardProps) {
+export default function CatList({ id, image, name, sex }: CatListCardProps) {
   return (
     <div className="h-auto max-w-96 rounded-xl bg-violet-400">
       <div className="flex flex-col">
