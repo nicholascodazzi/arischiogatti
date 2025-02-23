@@ -1,21 +1,21 @@
 import Image from "next/image";
-import { AdoptionSwiperCardProps } from "../types";
+import { AdoptionSwiperCardProps } from "../../adozioni/types";
 
 export default function AdoptionSwiperCard({
   image,
-  image_description,
   name,
   sex,
-  description,
   url,
 }: AdoptionSwiperCardProps) {
+  console.log(sex);
+
   return (
     <div className="overflow-hidden rounded-2xl border border-black bg-violet-400 shadow-lg">
       <div className="relative max-h-[250px] min-h-[250px] lg:flex lg:items-center lg:justify-center">
         <a href="#">
           <Image
-            src={image}
-            alt={image_description}
+            src={image ?? ""}
+            alt=""
             fill={true}
             className="object-cover"
           />
@@ -23,7 +23,7 @@ export default function AdoptionSwiperCard({
       </div>
 
       <div className="p-5">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-violet-700">
           {name}
         </h5>
         <div className="flex">
@@ -31,7 +31,6 @@ export default function AdoptionSwiperCard({
             <p>Sesso: {sex}</p>
           </div>
         </div>
-        <p className="mb-3 font-normal text-white">{description}</p>
         <a
           href={url}
           className="inline-flex items-center rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-violet-800 focus:outline-none focus:ring-4"

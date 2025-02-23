@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "../components/Navbar/NavBar";
+import NavBar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import Head from "next/head";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Arischiogatti - Home",
@@ -55,10 +57,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="author" content="Codazzi Nicholas" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
+      <Script src="http://localhost:8097"></Script>
       <body
         className={`${montserrat.className} bg-[url('/images/arischiogatti/background-pattern.png')]`}
       >
-        <Navbar />
+        <NavBar />
         <main>{children}</main>
         <Footer />
       </body>

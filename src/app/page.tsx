@@ -1,7 +1,5 @@
 "use client";
-import SectionCard from "@/src/features/homepage/components/sections-cards";
-import Head from "next/head";
-import Script from "next/script";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -14,109 +12,27 @@ import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import Link from "next/link";
-import Image from "next/image";
-import AdoptionSwiperCard from "@/src/features/adozioni/components/catCards";
-import TitleSubtitle from "../components/Title-Subtitle";
+import AdoptionSwiperCard from "@/src/features/homepage/components/cat-cards";
+import TitleSubtitle from "../components/title-subtitle";
+import Sections from "../features/homepage/components/sections";
+import HomeSwiper from "../features/homepage/components/swiper";
+import { fetchNCats } from "../features/homepage/actions/fetch-n-cats";
+import { cats as CatsType } from "@prisma/client";
 
 export default function Home() {
+  const [cats, setCats] = useState<CatsType[]>([]);
+
+  const handleFetchCats = async () => {
+    setCats((await fetchNCats(8)) ?? []);
+  };
+
+  handleFetchCats();
+
   return (
     <>
-      <Head>
-        <meta name="author" content="Codazzi Nicholas" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Script src="http://localhost:8097"></Script>
+      <HomeSwiper />
 
-      <Swiper
-        // install Swiper modules
-        modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
-        className="mySwiper h-96 lg:h-[32rem]"
-        slidesPerView={1}
-        effect={"fade"}
-        centeredSlides={true}
-        fadeEffect={{ crossFade: true }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        grabCursor={true}
-        loop={true}
-        scrollbar={{ draggable: true }}
-      >
-        <SwiperSlide>
-          <Image
-            src="/images/ui/carousel/cat-1.jpg"
-            className="h-full w-full object-cover"
-            width={10000}
-            height={10000}
-            alt="gatto 1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/images/ui/carousel/cat-2.jpg"
-            className="h-full w-full object-cover"
-            width={10000}
-            height={10000}
-            alt="gatto 2"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/images/ui/carousel/cat-4.jpg"
-            className="h-full w-full object-cover"
-            width={10000}
-            height={10000}
-            alt="gatto 4"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src="/images/ui/carousel/cat-5.jpg"
-            className="h-full w-full object-cover"
-            width={10000}
-            height={10000}
-            alt="gatto 5"
-          />
-        </SwiperSlide>
-      </Swiper>
-
-      <TitleSubtitle
-        title={"Esplora"}
-        subtitle={
-          " Scopri tutto ciò che riguarda Arischiogatti e resta sempre aggiornato"
-        }
-      />
-      <div className="flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-16">
-        <div className="lg:w-1/6">
-          <Link href="/adozioni">
-            <SectionCard
-              image={"/images/ui/sections/adozioni.svg"}
-              title={"Adozioni"}
-              description={"Un nuovo amico ti aspetta, vieni a trovarlo!"}
-            />
-          </Link>
-        </div>
-        <div className="lg:w-1/6">
-          <Link href="#">
-            <SectionCard
-              image={"/images/ui/sections/comunicazioni.svg"}
-              title={"Comunicazioni"}
-              description={"Resta sempre aggiornato su iniziative ed eventi!"}
-            />
-          </Link>
-        </div>
-        <div className="lg:w-1/6">
-          <Link href="#">
-            <SectionCard
-              image={"/images/ui/sections/smarriti.svg"}
-              title={"Smarriti"}
-              description={"Ritroviamo i nostri amici insieme!"}
-            />
-          </Link>
-        </div>
-      </div>
+      <Sections />
 
       {/* ADOPTIONS */}
       <TitleSubtitle
@@ -127,11 +43,8 @@ export default function Home() {
       <div>
         <div className="lg:flex lg:justify-center">
           <Swiper
-            // install Swiper modules
             modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectFade]}
             className="h-[500px] w-11/12 md:w-1/2 lg:w-10/12"
-            // effect={"fade"}
-            // fadeEffect={{ crossFade: true }}
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
@@ -139,72 +52,25 @@ export default function Home() {
             grabCursor={true}
             loop={true}
             breakpoints={{
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 50,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
+              0: { slidesPerView: 1, spaceBetween: 50 },
+              1024: { slidesPerView: 4, spaceBetween: 30 },
             }}
           >
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat1"
-                name="Luna"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat2"
-                name="Oliver e Sidh"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat3"
-                name="Ginger"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat4"
-                name="Milo"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat5"
-                name="Stellina"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat6"
-                name="Zen"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AdoptionSwiperCard
-                image={"/images/ui/adoptions/pepper.jpg"}
-                image_description="cat7"
-                name="Ombra"
-                description="Un micetto vivace e curioso, con le zampette bianche e una macchia a forma di cuore sul muso."
-              />
-            </SwiperSlide>
+            {/* ✅ Ensure `cats` is always an array */}
+            {cats.length > 0 ? (
+              cats.map((cat) => (
+                <SwiperSlide key={cat.id}>
+                  <AdoptionSwiperCard
+                    image={cat.image ?? ""}
+                    name={cat.name ?? ""}
+                  />
+                </SwiperSlide>
+              ))
+            ) : (
+              <p className="text-center text-gray-500">
+                Nessun gatto disponibile...
+              </p>
+            )}
           </Swiper>
         </div>
       </div>

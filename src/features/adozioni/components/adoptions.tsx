@@ -1,41 +1,37 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import CatList from "./catList";
-import Title from "@/src/components/Title";
-import { cats } from "@prisma/client";
+import Title from "@/src/components/title";
+import { cats as CatsType } from "@prisma/client";
 
-export default function Adoptions({ cats }: { cats: cats[] }) {
-  // console.log(cats);
+export default function Adoptions({ cats }: { cats: CatsType[] }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(9); // Default to 9
-
-  const getWindowWidth = () => {
-    // Function to get the window width
-    const { innerWidth: width } = window;
-    return width;
-  };
+  const { innerWidth: width } = window;
+  
+  const [itemsPerPage, setItemsPerPage] = useState(() => {
+    return width <= 640 ? 5 : width <= 1024 ? 8 : 9;
+  });
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsPerPage(
-        getWindowWidth() <= 1024 ? (getWindowWidth() <= 640 ? 5 : 8) : 9,
-      );
+      const width = window.innerWidth;
+      setItemsPerPage(width <= 640 ? 5 : width <= 1024 ? 8 : 9);
     };
-    handleResize(); // Call initially to set itemsPerPage correctly
-    window.addEventListener("resize", handleResize);
 
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCats = cats.slice(indexOfFirstItem, indexOfLastItem);
+  const currentCats = useMemo(() => {
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    return cats.slice(indexOfFirstItem, indexOfLastItem);
+  }, [cats, currentPage, itemsPerPage]);
 
-  const paginate = (pageNumber: number) => {
+  const paginate = useCallback((pageNumber: number) => {
     setCurrentPage(pageNumber);
-    // Scroll to the top of the page when paginating
-    window.scrollTo(0, 0);
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const totalPages = Math.ceil(cats.length / itemsPerPage);
 
@@ -49,6 +45,8 @@ export default function Adoptions({ cats }: { cats: cats[] }) {
         <div
           className="grid-rows-auto grid grid-cols-1 place-items-center gap-8 text-white sm:grid-cols-2 lg:grid-cols-3 lg:place-items-start"
           id="catTable"
+          role="list"
+          aria-live="polite"
         >
           {currentCats.length > 0 ? (
             currentCats.map((cat) => (
@@ -61,41 +59,43 @@ export default function Adoptions({ cats }: { cats: cats[] }) {
               />
             ))
           ) : (
-            <p>Loading</p>
+            <p aria-live="polite">Loading...</p>
           )}
         </div>
       </div>
       <div id="pagination" className="mb-4 flex justify-center text-white">
-        {currentPage > 1 && (
-          <button
-            id="prev"
-            onClick={() => paginate(currentPage - 1)}
-            className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600"
-          >
-            Prec.
-          </button>
-        )}
+        <button
+          id="prev"
+          onClick={() => paginate(currentPage - 1)}
+          className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600 disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={currentPage === 1}
+          aria-label="Go to previous page"
+        >
+          Prec.
+        </button>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
           <button
             key={number}
             onClick={() => paginate(number)}
-            style={{ margin: "0 5px", padding: "5px 10px" }}
             className={`rounded-md px-4 py-2 hover:bg-violet-600 ${
-              number === currentPage ? "bg-violet-600" : "bg-violet-400"
+              number === currentPage
+                ? "bg-violet-700 font-bold text-white"
+                : "bg-violet-400"
             }`}
+            aria-label={`Go to page ${number}`}
           >
             {number}
           </button>
         ))}
-        {currentPage < totalPages && (
-          <button
-            id="next"
-            onClick={() => paginate(currentPage + 1)}
-            className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600"
-          >
-            Succ.
-          </button>
-        )}
+        <button
+          id="next"
+          onClick={() => paginate(currentPage + 1)}
+          className="rounded-md bg-violet-400 px-4 py-2 hover:bg-violet-600 disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={currentPage === totalPages}
+          aria-label="Go to next page"
+        >
+          Succ.
+        </button>
       </div>
     </>
   );

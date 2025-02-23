@@ -1,9 +1,10 @@
 type AdoptionSwiperCardProps = {
-  image: string;
-  image_description: string;
-  name: string;
+  id?: string,
+  image?: string;
+  image_description?: string;
+  name?: string;
   sex?: string;
-  description: string;
+  description?: string;
   url?: string;
 };
 
